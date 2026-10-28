@@ -30,8 +30,9 @@
 - There are no tests here: test through FasterCap. Each bug fix gets a test that fails
   without it, as a geometry in FasterCap's `tests/geometries.py`, e.g. the concentric spheres
   of `ediloren/FasterCap#8` run with `-a`.
-- Build `FasterCap_MJK` against this checkout and run its `ctest --test-dir build
-  --output-on-failure` before calling work done; report failures with their output.
+- Build FasterCap from `../work/FasterCap`, whose `Geometry` symlink points here (see
+  FasterCap's AGENTS.md), and run `ctest --test-dir ../work/build --output-on-failure` before
+  calling work done; report failures with their output.
 - No loosened tolerances or re-baselined numbers without a physical explanation.
 
 ## Git
