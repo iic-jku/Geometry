@@ -8,7 +8,18 @@
 - `iic-jku/FasterCap` builds it as the sibling `../Geometry` (`add_subdirectory`); its CI
   checks out this fork's `master`. The sources include FasterCap's `stdafx.h`, so it builds
   only as part of FasterCap.
-- Fixes meant for upstream go on branches based on `upstream/master`, one concern each.
+- The repository is standalone, not in ediloren's fork network: new PRs default to
+  `iic-jku/Geometry` `master`.
+
+## Branches
+
+- Every change to code or CMake files goes issue → branch → PR → `master`: one branch per
+  issue, based on `master`, merged with a merge commit once its CI is green. Its test goes
+  into `FasterCap` through a `FasterCap` PR, after the fix is in `master` here, as
+  `FasterCap`'s CI builds this `master`.
+- CI, `AGENTS.md`, `ReadMe.txt` and other docs, `.gitignore`: changes that don't touch the
+  code are committed directly on `master`, without issue or PR.
+- Branches are never deleted.
 
 ## Scope
 
@@ -49,9 +60,10 @@
 - Commit and PR texts contain only what the reader can't get from the issue, diff or CI.
   PR: issue reference plus 1–4 sentences, no Summary/Changes/Testing headings, and a
   proposed title in the style of the commit subjects.
-- Every PR for a bug references an issue: `Fixes #N` or `Part of #N`; without an issue,
-  file one first. Issues in other repos are written `ediloren/Geometry#N`,
-  `iic-jku/FasterCap#N`.
+- Every PR references its issue: `Fixes #N` or `Part of #N`; without an issue, file one
+  first. Issues in other repos are written `ediloren/Geometry#N`, `iic-jku/FasterCap#N`.
+- Martin pushes and opens the PRs: for each finished branch, say whether it is pushed and
+  propose the PR title and text.
 - Issues show the smallest reproducing input and end with the versions used: this commit,
   the FasterCap commit and options, OS and CPU architecture, compiler.
 - Prefer bullet lists to long sentences chained with semicolons; no period at the end of a
