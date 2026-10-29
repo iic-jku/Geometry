@@ -19,7 +19,7 @@
   `FasterCap`'s CI builds this `master`.
 - CI, `AGENTS.md`, `ReadMe.txt` and other docs, `.gitignore`: changes that don't touch the
   code are committed directly on `master`, without issue or PR.
-- Branches are never deleted.
+- A branch is deleted once its PR is merged, on GitHub and locally.
 
 ## Scope
 
